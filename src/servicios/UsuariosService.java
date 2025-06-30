@@ -18,7 +18,7 @@ public class UsuariosService {
         usuarios.clear();
         try (BufferedReader br = new BufferedReader(new FileReader(archivo))){
             String linea;
-            br.readLine(); // saltar headers
+            br.readLine();
             while ((linea = br.readLine()) != null) {
                 String[] datos = linea.split(",");
                 int id = Integer.parseInt(datos[0]);
@@ -40,20 +40,20 @@ public class UsuariosService {
         }
     }
 
-    public void agregarUsuario(Usuario usuario) {
+    public void agregarUsuario(Usuario usuario){
         usuarios.put(usuario.getId(), usuario);
-        guardarUsuarios(); // Sobrescribir archivo
+        guardarUsuarios();
     }
 
     public boolean eliminarUsuario(int id) {
         if (usuarios.remove(id) != null) {
-            guardarUsuarios(); // Sobrescribir archivo
+            guardarUsuarios();
             return true;
         }
         return false;
     }
 
-    public Usuario buscarUsuario(int id) {
+    public Usuario buscarUsuario(int id){
         return usuarios.get(id);
     }
 
