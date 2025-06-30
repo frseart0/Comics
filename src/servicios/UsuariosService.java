@@ -14,9 +14,9 @@ public class UsuariosService {
         cargarUsuarios();
     }
 
-    private void cargarUsuarios() {
+    private void cargarUsuarios(){
         usuarios.clear();
-        try (BufferedReader br = new BufferedReader(new FileReader(archivo))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(archivo))){
             String linea;
             br.readLine(); // saltar headers
             while ((linea = br.readLine()) != null) {
@@ -29,13 +29,13 @@ public class UsuariosService {
         }
     }
 
-    private void guardarUsuarios() {
+    private void guardarUsuarios(){
         try (PrintWriter pw = new PrintWriter(new FileWriter(archivo))) {
             pw.println("id,nombreApellido");
             for (Usuario u : usuarios.values()) {
                 pw.println(u);
             }
-        } catch (IOException e) {
+        } catch (IOException e){
             System.out.println("Error al guardar usuarios: " + e.getMessage());
         }
     }

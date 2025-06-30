@@ -13,6 +13,7 @@ public class Main {
         biblioteca.agregarComic(new Comic("El eternauta", "Hector Oesterheld ", 15000, true));
         biblioteca.venderComic("Berserk Vol 1");
 
-        usuarios.agregarUsuario(new Usuario(1, "Juan Pérez"));
+        usuarios.agregarUsuario(new Usuario(1, "Juan Pavez"));
+        usuarios.agregarUsuario(new Usuario(2, "Francisco Arellano"));
     }
 }
